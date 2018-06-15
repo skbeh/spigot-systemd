@@ -1,0 +1,15 @@
+plugins {
+	id 'com.github.johnrengelman.shadow' version '2.0.4'
+	id 'java'
+}
+
+repositories {
+	mavenCentral()
+	maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+	maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+dependencies {
+	compileOnly 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
+	compile 'info.faljse:SDNotify:1.1'
+}
