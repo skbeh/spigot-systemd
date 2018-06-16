@@ -30,7 +30,7 @@ public class SpigotSystemdPlugin extends JavaPlugin {
 	public void onDisable() {
 	}
 
-	public void onServerMostlyReady() {
+	void onServerMostlyReady() {
 		System.out.println("The server is now \"mostly ready\"!");
 
 		// Unregister the StartupListener, as the server is now
@@ -50,8 +50,8 @@ public class SpigotSystemdPlugin extends JavaPlugin {
 		this.onPluginEnabled();
 	}
 
-	public void onPluginEnabled() {
-		if (this.checkPluginsEnabled()) {
+	void onPluginEnabled() {
+		if (checkPluginsEnabled()) {
 			System.out.println("All plugins have been enabled!");
 			System.out.println("Unregistering PluginListener...");
 			HandlerList.unregisterAll(this.pluginListener);
@@ -63,7 +63,7 @@ public class SpigotSystemdPlugin extends JavaPlugin {
 		}
 	}
 
-	public boolean checkPluginsEnabled() {
+	private boolean checkPluginsEnabled() {
 		System.out.println("Checking whether all plugins have been enabled...");
 		Plugin[] loadedPlugins = getServer().getPluginManager().getPlugins();
 		boolean allPluginsEnabled = true;
