@@ -16,7 +16,6 @@ public class PluginListener implements Listener {
 
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void onPluginEnabled(PluginEnableEvent event) {
-		System.out.println("Some plugin has been enabled!");
 		this.mainPlugin.onPluginEnabled();
 	}
 }

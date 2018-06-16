@@ -16,7 +16,6 @@ public class StartupListener implements Listener {
 
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void onWorldInitialized(WorldInitEvent event) {
-		System.out.println("Some World has been initialized!");
-		this.mainPlugin.onServerMostlyReady();
+		this.mainPlugin.onWorldInitialized();
 	}
 }
