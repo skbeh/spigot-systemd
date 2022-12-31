@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
     implementation("info.faljse:SDNotify:1.5-SNAPSHOT")
     implementation("org.slf4j:slf4j-nop:2.0.6")
 }
