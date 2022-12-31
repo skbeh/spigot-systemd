@@ -1,5 +1,5 @@
 ---
-name: systemd
+name: SpigotSystemd
 website: https://git.revreso.de/gigadoc2/spigot-systemd
 description: Integrates Spigot with systemd when running as a systemd service.
 author: Gigadoc2
