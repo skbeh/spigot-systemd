@@ -1,14 +1,13 @@
-package jetzt.nicht.minecraft.spigotSystemd;
+package jetzt.nicht.SpigotSystemd;
 
 import info.faljse.SDNotify.SDNotify;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
+import org.bukkit.scheduler.BukkitTask;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-public class SpigotSystemdPlugin extends JavaPlugin {
-    private Timer watchdogTimer;
-
+public class SpigotSystemd extends JavaPlugin {
+    private BukkitTask watchdogTask;
     private boolean isNotifySent;
 
     @Override
@@ -23,13 +22,8 @@ public class SpigotSystemdPlugin extends JavaPlugin {
         }
 
         if (SDNotify.isWatchdogEnabled()) {
-            watchdogTimer = new Timer(true);
-            watchdogTimer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    SDNotify.sendWatchdog();
-                }
-            }, 0, SDNotify.getWatchdogFrequency() / 1000 / 2);
+            BukkitScheduler scheduler = Bukkit.getScheduler();
+            watchdogTask = scheduler.runTaskTimer(this, SDNotify::sendWatchdog, 0, SDNotify.getWatchdogFrequency() / 1000 / 50 /* 50ms per tick */ / 2);
         }
     }
 
@@ -39,9 +33,9 @@ public class SpigotSystemdPlugin extends JavaPlugin {
         // can't relly notify systemd of reloads or shutdowns without breaking
         // the other. We could however, prolong the watchdog interval until
         // being activated again.
-        if (watchdogTimer != null) {
-            watchdogTimer.cancel();
-            watchdogTimer = null;
+        if (watchdogTask != null) {
+            watchdogTask.cancel();
+            watchdogTask = null;
         }
     }
 }

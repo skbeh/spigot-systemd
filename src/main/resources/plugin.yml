@@ -5,5 +5,5 @@ description: Integrates Spigot with systemd when running as a systemd service.
 author: Gigadoc2
 version: 1.0.0
 
-main: jetzt.nicht.minecraft.spigotSystemd.SpigotSystemdPlugin
+main: jetzt.nicht.SpigotSystemd.SpigotSystemd
 load: STARTUP

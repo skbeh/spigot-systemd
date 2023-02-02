@@ -11,14 +11,16 @@ plugins {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+    maven("https://repo.papermc.io/repository/maven-public/")
     maven("https://oss.sonatype.org/content/repositories/snapshots/")
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
-    implementation("info.faljse:SDNotify:1.5-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.19.3-R0.1-SNAPSHOT")
+    compileOnly("com.velocitypowered:velocity-api:3.1.1")
+    annotationProcessor("com.velocitypowered:velocity-api:3.1.1")
     implementation("org.slf4j:slf4j-nop:2.0.6")
+    implementation("info.faljse:SDNotify:1.5-SNAPSHOT")
 }
 
 tasks.withType<AbstractArchiveTask>().configureEach {
