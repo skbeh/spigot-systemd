@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.20-R0.1-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:3.1.1")
     annotationProcessor("com.velocitypowered:velocity-api:3.1.1")
     implementation("org.slf4j:slf4j-nop:2.0.7")
