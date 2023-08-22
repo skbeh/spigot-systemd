@@ -20,7 +20,7 @@ dependencies {
     compileOnly("com.velocitypowered:velocity-api:3.1.1")
     annotationProcessor("com.velocitypowered:velocity-api:3.1.1")
     implementation("org.slf4j:slf4j-nop:2.0.7")
-    implementation("info.faljse:SDNotify:1.5-SNAPSHOT")
+    implementation("info.faljse:SDNotify:1.5")
 }
 
 tasks.withType<AbstractArchiveTask>().configureEach {
