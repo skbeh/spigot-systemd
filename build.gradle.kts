@@ -19,7 +19,7 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:3.1.1")
     annotationProcessor("com.velocitypowered:velocity-api:3.1.1")
-    implementation("org.slf4j:slf4j-nop:2.0.12")
+    implementation("org.slf4j:slf4j-nop:2.0.13")
     implementation("info.faljse:SDNotify:1.5")
 }
 
