@@ -17,8 +17,8 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.9-R0.1-SNAPSHOT")
-    compileOnly("com.velocitypowered:velocity-api:3.1.1")
-    annotationProcessor("com.velocitypowered:velocity-api:3.1.1")
+    compileOnly("com.velocitypowered:velocity-api:3.4.0")
+    annotationProcessor("com.velocitypowered:velocity-api:3.4.0")
     implementation("org.slf4j:slf4j-nop:2.0.17")
     implementation("info.faljse:SDNotify:1.6")
 }
